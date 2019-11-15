@@ -8,9 +8,9 @@ console.log(answer);
 var guess = 0;
 var turns = 0;
 while (guess != answer) {
-  guess = prompt("guess the number 1-100");
-  if (guess == "q") {
-	  break;
+	guess = prompt("guess the number 1-100");
+	if (guess == "q") {
+		break;
 	}
 	if (validator(guess) == true) {
 		turns++;
@@ -18,7 +18,7 @@ while (guess != answer) {
 			alert("too low");
 		} else if (guess > answer) {
 			alert("too high");
-	}
+		}
 	} else if (validator(guess) == false){
 		alert("invalid guess!");
 	}
