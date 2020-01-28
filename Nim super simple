@@ -3,16 +3,27 @@ var winner = null;
 var turn = 0;
 
 while (count < 21) {
-  turn = Math.floor(Math.random()*3)+1;
+  turn = cpuTurn();
   count += turn;
-  alert("computer counts "+turn+" and now count is "+count);
-  if (count >= 21) {
-    winner = "you";
-    break;
+  alert("the now count is "+count);
+  winner = "you";
+  if (count < 21) {
+    turn = userTurn();
+    count += turn;
+    alert("the now count is "+count);
+    winner = "computer";
   }
-  turn = parseInt(prompt("how many do you count?"));
-  count += turn;
-  alert("count is now "+count);
-  winner = "computer";
 }
 alert(winner+" won!");
+
+
+function cpuTurn() {
+  turn = Math.floor(Math.random()*3)+1;
+  alert("computer counts "+turn);
+  return turn;
+}
+
+function userTurn() {
+  turn = parseInt(prompt("how many do you count?"));
+  return turn;
+}
